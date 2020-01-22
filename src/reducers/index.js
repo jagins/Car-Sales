@@ -20,9 +20,59 @@ export const reducer = (state = initalState, action) =>
 {
     switch(action.type)
     {
-        case 'BUY_FEATURE':
-            console.log(action.payload);
+        case 'BUY':
+            return{
+                ...state,
+                car: {
+                    ...state.car,
+                    features: [...state.car.features, state.additionalFeatures.filter(feature => feature.id === action.payload)[0]]
+                },
+                additionalFeatures: state.additionalFeatures.filter(feature => feature.id !== action.payload),
+                additionalPrice: state.additionalPrice += state.additionalFeatures.filter(feature => feature.id === action.payload)[0].price
+            }
         default:
             return state;
     }
 }
+
+/*switch(action.payload)
+            {
+                case 'V-6 engine':
+                    return{
+                        ...state,
+                        car: {
+                            ...state.car,
+                            features: [...state.car.features, action.payload]
+                        },
+                        additionalPrice: state.additionalPrice + state.additionalFeatures[0].price
+                    };
+                    case 'Racing detail package':
+                    return{
+                        ...state,
+                        car: {
+                            ...state.car,
+                            features: [...state.car.features, action.payload]
+                        },
+                        additionalPrice: state.additionalPrice + state.additionalFeatures[1].price
+                    };
+                    case 'Premium sound system':
+                        return{
+                            ...state,
+                            car: {
+                                ...state.car,
+                                features: [...state.car.features, action.payload]
+                            },
+                            additionalPrice: state.additionalPrice + state.additionalFeatures[2].price
+                        };
+                        case 'Rear spoiler':
+                            return{
+                                ...state,
+                                car: {
+                                    ...state.car,
+                                    features: [...state.car.features, action.payload]
+                                },
+                                additionalPrice: state.additionalPrice + state.additionalFeatures[3].price
+                            };
+                            break
+
+            }*/

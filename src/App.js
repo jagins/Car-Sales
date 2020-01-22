@@ -8,16 +8,16 @@ import {connect} from 'react-redux';
 import {removeFeature, buyFeature} from './actions/appActions';
 
 const App = props => {
-  const {additionalPrice, car, additionalFeatures} = props;
+  const {additionalPrice, car, additionalFeatures, removeFeature, buyFeature} = props;
 
-  const removeFeature = item => {
+  const removeItem = item => {
     // dispatch an action here to remove an item
     removeFeature(item);
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
-    console.log(item);
+    buyFeature(item);
   };
 
   return (
