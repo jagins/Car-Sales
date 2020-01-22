@@ -24,7 +24,7 @@ const App = props => {
     <div className="boxes">
       <div className="box">
         <Header car={car} />
-        <AddedFeatures car={car} />
+        <AddedFeatures car={car} removeItem={removeItem} />
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={additionalFeatures} buyItem={buyItem}/>

@@ -30,6 +30,10 @@ export const reducer = (state = initalState, action) =>
                 additionalFeatures: state.additionalFeatures.filter(feature => feature.id !== action.payload),
                 additionalPrice: state.additionalPrice += state.additionalFeatures.filter(feature => feature.id === action.payload)[0].price
             }
+        case 'REMOVE':
+            return{
+
+            };
         default:
             return state;
     }

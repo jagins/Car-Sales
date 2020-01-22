@@ -1,6 +1,6 @@
 export const removeFeature = item =>
 {
-    return {type: 'REMOVE_FEATURE', payload: item};
+    return {type: 'REMOVE', payload: item};
 };
 
 export const buyFeature = item =>
