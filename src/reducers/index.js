@@ -20,6 +20,8 @@ export const reducer = (state = initalState, action) =>
 {
     switch(action.type)
     {
+        case 'BUY_FEATURE':
+            console.log(action.payload);
         default:
             return state;
     }
